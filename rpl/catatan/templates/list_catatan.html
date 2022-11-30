@@ -1,0 +1,11 @@
+{% block content %}
+<h1>Notes</h1>
+<table>
+    {% for note in notes %}
+    <h3>{{ note.title }}</h3>
+    <h5>user: {{ note.uploader }}</h5>
+    <h5>id: {{ note.id }}</h5>
+    <br> {% endfor %}
+</table>
+
+{% endblock content %}

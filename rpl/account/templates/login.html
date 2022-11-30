@@ -1,0 +1,20 @@
+{% block content %} {% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h3>LOGIN</h3>
+    <form method="POST" action=""> {% csrf_token %}
+        <div>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Login">
+    </form>
+    <br> {% for message in messages %}
+    <p id="messages">{{message}}</p> {% endfor %}
+    <br> Create account: <a href="{% url 'register' %}">Sign Up</a>
+</body>
+
+</html>
+{% endblock %}

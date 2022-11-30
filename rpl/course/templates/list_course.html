@@ -1,0 +1,18 @@
+{% block content %}
+<h1>Courses</h1>
+{% if courses %}
+<table>
+    {% for i in courses %}
+    <h4>Nama Course: {{i.course_name}}</h4>
+    <!-- <p>{{i.list_bab}}</p> -->
+    <br> {% endfor %}
+</table>
+{% else %}
+<h3>Sepertinya, Anda belum pernah menambahkan Course.</h3>
+{% endif %}
+<form method="get">
+    {{searchCourse.form}}
+    <button type="submit" aria-placeholder="Search Course...">Search</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% block content %}
+
+<div class="login">
+
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h1>Tambahkan Course</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="nama_course">Nama Course</label>
+        <input type="text" name="course_name" class="form-control" maxlength="40" required id="nama_course">
+        <button type="submit" value="Submit">Tambahkan</button>
+        <!-- <a class="btn-solid-lg" href="/refleksi/">Kembali</a> -->
+        <!-- <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="Tambahkan" /></td>
+        </tr>
+        </table> -->-->
+    </form>
+</div>
+
+{% endblock content %}
