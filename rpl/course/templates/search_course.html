@@ -1,6 +1,29 @@
 {% block content %}
 <form method="get">
-    {{nama_course_dicari}}
+    {% csrf_token %}
+    <h1>Course Lists</h1>
+    <table border="1px">
+        <tr>
+            <th>ID</th>
+            <th>Course Name</th>
+            <th>Created By</th>
+        </tr>
+
+
+        {% for i in nama_course_dicari %}
+        <tr>
+            <td>{{ i.course_id }}</td>
+            <td><a href="bab/{{ i.course_id }}">{{ i.course_name }}</a></td>
+            <td>{{ i.user_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/course">See all courses</a>
+    <br> --------------------------------------------------------------------------------------
+    <h2>Here you can search course by name or by id</h2>
+    <br>
+    <input type="text" name="course_name" class="form-control" maxlength="40" required id="nama_course">
     <button type="submit">Search Course</button>
 </form>
 {% endblock content %}

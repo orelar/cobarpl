@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'course',
     'catatan',
     'account',
+    'home',
 
 ]
 

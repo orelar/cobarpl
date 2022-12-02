@@ -1,0 +1,21 @@
+{% block content %}
+<form method="get">
+    <h1>Bab Lists</h1>
+    <table border="1px">
+        <tr>
+            <th>ID</th>
+            <th>Bab Name</th>
+            <tr>
+
+                {% for i in nama_bab_dicari %}
+                <tr>
+                    <td>
+                        {{ i.bab_id }}
+                    </td>
+                    <td>
+                        {{ i.bab_name }}
+                    </td>
+                    {% endfor %}
+    </table>
+</form>
+{% endblock content %}

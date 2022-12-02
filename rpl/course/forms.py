@@ -1,18 +1,21 @@
 from django import forms
 from django.db.models import fields
-from .models import Course
+from .models import Course, Bab
+
 
 class CourseForm(forms.ModelForm):
     class Meta:
         model = Course
-        fields = ['course_id', 'course_name', 'list_bab']
-        exclude = ('list_bab', 'course_id')
+        fields = ['course_name']
+        exclude = ()
 
     course_name = forms.CharField(label="Course", required=True, widget=forms.Textarea(attrs = {'placeholder': 'Course'}))
 
-class SearchCourseForm(forms.ModelForm):
+
+class BabForm(forms.ModelForm):
     class Meta:
-        model = Course
-        fields = ['course_id', 'course_name', 'list_bab']
-        exclude = ('list_bab', 'course_id')
-    course_name = forms.CharField(label="Course", required=True, widget=forms.Textarea(attrs = {'placeholder': 'Course'}))
+        model = Bab
+        fields = ['bab_name']
+        exclude = ('bab_id',)
+
+    bab_name = forms.CharField(label="Bab", required=True, widget=forms.Textarea(attrs = {'placeholder': 'Bab'}))
