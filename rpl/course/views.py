@@ -13,11 +13,6 @@ from django.urls import reverse
 
 def index(request, courid):
     courses = Course.objects.filter(course_id=courid)
-
-    # searchCourse = SearchCourseName(request.GET, queryset=courses)
-    # searchCourse = SearchCourseName(request.GET, queryset=courses)
-    # course = searchCourse.qs
-    # context = {'courses': courses, 'search_course':searchCourse}
     context = {'courses': courses}
     return render(request, 'list_course.html', context)
 
